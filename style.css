@@ -1,0 +1,100 @@
+body {
+  font-family: 'Georgia', serif;
+  background: #fdf6e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.diary {
+  position: relative;
+  background: #fff8dc;
+  border: 2px solid #8b5e3c;
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  text-align: center;
+  color: #5a3e2b;
+  margin: 0 0 15px;
+}
+
+textarea {
+  flex: 1; /* ensures it stays inside the box */
+  width: 100%;
+  min-height: 250px;
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.5;
+  background: #fffaf0;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+  box-sizing: border-box; /* prevents overflow */
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+button {
+  background: #8b5e3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button:hover {
+  background: #a0522d;
+}
+
+/* Status message styling at bottom-right corner */
+.status {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #d4edda;
+  color: #155724;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 13px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+  pointer-events: none; /* avoids blocking clicks */
+}
+
+.status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Different colors for different actions */
+.status.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.error {
+  background: #f8d7da;
+  color: #721c24;
+}
